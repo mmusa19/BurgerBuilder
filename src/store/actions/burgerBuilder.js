@@ -24,14 +24,14 @@ export const setIngredients = ingredients => {
 
 export const fetchIngredientsFailed = () => {
   return {
-    type: actionTypes.FETCH_INGREDIENTS_FAIL
+    type: actionTypes.FETCH_INGREDIENTS_FAILED
   };
 };
 
 export const initIngredients = () => {
   return dispatch => {
     axios
-      .get("https://react-burger-app-78145.firebaseio.com/ingredients.json")
+      .get("/ingredients.json")
       .then(response => {
         dispatch(setIngredients(response.data));
       })

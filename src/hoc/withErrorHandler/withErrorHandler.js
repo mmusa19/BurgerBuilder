@@ -4,11 +4,9 @@ import Modal from "../../components/UI/Modal/Modal";
 import Aux from "../Aux/Aux";
 
 const withErrorHandler = (WrappedComponent, axios) => {
-  //factory class
   return class extends Component {
     constructor(props) {
       super(props);
-      // Don't call this.setState() here!
       this.state = { error: null };
 
       this.reqInterceptor = axios.interceptors.request.use(req => {
